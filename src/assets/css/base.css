@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'yy';
+    src: url(../font/YuYang.ttf);
+    font-display: swap;
+}
+
+:root {
+    --theme-text-color: #809bff;
+    --theme-active-text-color: #ff3d7f;
+    --self-bg-color: #d5ebe1;
+    --bg-main-color: #363663;
+    --bg-draw-color: rgba(26, 26, 26, .9);
+    --bg-line-color: hsla(0, 0%, 100%, 0);
+    --wall-bg-color: linear-gradient(90deg, --bg-draw-color 0, --bg-draw-color 98%, --bg-line-color 98%, --bg-line-color 100%) 50% 0,
+        linear-gradient(0deg, --bg-draw-color 0, --bg-draw-color 98%, --bg-line-color 98%, --bg-line-color 100%) 0 50%,
+        --bg-main-color;
+    color: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#app {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 格子背景 */
+    background: linear-gradient(90deg, var(--bg-draw-color) 0, var(--bg-draw-color) 98%, var(--bg-line-color) 98%, var(--bg-line-color) 100%) 50% 0, linear-gradient(0deg, var(--bg-draw-color) 0, var(--bg-draw-color) 98%, var(--bg-line-color) 98%, var(--bg-line-color) 100%) 0 50%, var(--bg-main-color);
+    background-size: 80px 80px;
+}
+
+[data-box] {
+    /* 10是最理想的状态 但是盒子宽度限制 */
+    padding: 3% 8%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* 滚动条样式 */
+[data-box]::-webkit-scrollbar {
+    width: 3px;
+}
+
+[data-box]::-webkit-scrollbar-thumb {
+    background: var(--bg-main-color);
+}
+
+.active-color {
+    color: #ff3d7f;
+}

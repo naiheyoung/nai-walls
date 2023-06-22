@@ -1,7 +1,11 @@
-import './assets/base.css';
+import './assets/css/base.css';
+import '@/assets/css/tailwind.css';
+import '@/assets/css/myself.css';
 
 import { createApp } from 'vue';
-import App from './App.vue';
-import '@/assets/tailwind.css';
+import WallHome from './WallHome.vue';
+import router from './router';
 
-createApp(App).mount('#app');
+const app = createApp(WallHome);
+app.use(router);
+app.mount('#app');

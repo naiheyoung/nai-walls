@@ -1,12 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  // 注意空格
+	// 注意空格
 	content: ['./index.html', './src/**/*.{html,vue,js}'],
 	theme: {
 		extend: {
 			colors: {
-				test1: '#00668A',
-				test2: '#004E71',
+				navBg: 'black',
+				textColor: '#809bff',
+				activeColor: '#ff3d7f',
 			},
 		},
 		container: {
