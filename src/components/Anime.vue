@@ -4,49 +4,31 @@
 		data-box>
 		<div
 			class="pic-box"
-			style="
-				background-image: url('https://backiee.com/static/wpdb/wallpapers/1000x563/177454.jpg');
-			"></div>
+			data-pic="https://backiee.com/static/wpdb/wallpapers/1000x563/177454.jpg"></div>
 		<div
 			class="pic-box"
-			style="
-				background-image: url('https://backiee.com/static/wpdb/wallpapers/1000x563/142977.jpg');
-			"></div>
+			data-pic="https://backiee.com/static/wpdb/wallpapers/1000x563/142977.jpg"></div>
 		<div
 			class="pic-box"
-			style="
-				background-image: url('https://backiee.com/static/wpdb/wallpapers/1000x563/317832.jpg');
-			"></div>
+			data-pic="https://backiee.com/static/wpdb/wallpapers/1000x563/317832.jpg"></div>
 		<div
 			class="pic-box"
-			style="
-				background-image: url('https://backiee.com/static/wpdb/wallpapers/1000x563/162415.jpg');
-			"></div>
+			data-pic="https://backiee.com/static/wpdb/wallpapers/1000x563/162415.jpg"></div>
 		<div
 			class="pic-box"
-			style="
-				background-image: url('https://backiee.com/static/wpdb/wallpapers/1000x563/218224.jpg');
-			"></div>
+			data-pic="https://backiee.com/static/wpdb/wallpapers/1000x563/218224.jpg"></div>
 		<div
 			class="pic-box"
-			style="
-				background-image: url('https://backiee.com/static/wpdb/wallpapers/1000x563/150342.jpg');
-			"></div>
+			data-pic="https://backiee.com/static/wpdb/wallpapers/1000x563/150342.jpg"></div>
 		<div
 			class="pic-box"
-			style="
-				background-image: url('https://backiee.com/static/wpdb/wallpapers/1000x563/135577.jpg');
-			"></div>
+			data-pic="https://backiee.com/static/wpdb/wallpapers/1000x563/135577.jpg"></div>
 		<div
 			class="pic-box"
-			style="
-				background-image: url('https://backiee.com/static/wpdb/wallpapers/1000x563/278804.jpg');
-			"></div>
+			data-pic="https://backiee.com/static/wpdb/wallpapers/1000x563/278804.jpg"></div>
 		<div
 			class="pic-box"
-			style="
-				background-image: url('https://backiee.com/static/wpdb/wallpapers/1000x563/175215.jpg');
-			"></div>
+			data-pic="https://backiee.com/static/wpdb/wallpapers/1000x563/175215.jpg"></div>
 	</div>
 	<teleport to="[data-box]">
 		<div
@@ -137,7 +119,7 @@ const lazyShowWallpaper = () => {
 		(entries) => {
 			entries.forEach((item) => {
 				if (item.isIntersecting) {
-					console.log(item.target.backgroundImage);
+					item.target.style.backgroundImage = `url(${item.target.dataset.pic})`;
 					ob.unobserve(item.target);
 				}
 			});
@@ -147,7 +129,7 @@ const lazyShowWallpaper = () => {
 		}
 	);
 
-	const pics = document.querySelectorAll('.pic');
+	const pics = document.querySelectorAll('.pic-box');
 	pics.forEach((item) => ob.observe(item));
 };
 

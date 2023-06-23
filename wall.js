@@ -1,10 +1,12 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, Menu } = require('electron');
 
 const initWindow = () => {
+	// 隐藏工具栏
+	Menu.setApplicationMenu(null);
 	const wall = new BrowserWindow({
-		width: 800,
-        height: 600,
-        // 置顶
+		width: 1200,
+		height: 600,
+		// 置顶
 		alwaysOnTop: true,
 	});
 
